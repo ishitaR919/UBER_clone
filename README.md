@@ -21,10 +21,13 @@ POST /users/register
 - Status Code: 200 (or 201)
 - Description: User successfully registered.
 
+
 ## Error Responses
 
 - 400 Bad Request: Input validation failed (e.g., invalid email, insufficient character length, or missing fields).
 - 500 Internal Server Error: An unexpected error occurred on the server.
+
+
 
 ## Example Responses
 
@@ -35,3 +38,6 @@ POST /users/register
   - email (String): string (required, valid email format, minimum 5 characters).
   - password (String): string (required, minimum 6 characters).
 - token (String): JWT Token
+
+
+
