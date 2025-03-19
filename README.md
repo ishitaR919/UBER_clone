@@ -8,6 +8,7 @@ This endpoint registers a new user. It validates the input data and creates a ne
 
 POST /users/register
 
+
 ## Required Request Data
 
 - fullname:
