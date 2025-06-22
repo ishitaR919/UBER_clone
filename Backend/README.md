@@ -76,6 +76,78 @@ POST /users/login
 }
 ```
 
+# /users/profile Endpoint
+
+## Description
+
+This endpoint returns the profile information of the authenticated user. The user must be logged in and provide a valid JWT token (usually via cookies or Authorization header).
+
+## HTTP Method & URL
+
+GET /users/profile
+
+## Authentication
+
+- Required: Yes (JWT token via cookie or Authorization header)
+
+## Successful Response
+
+- Status Code: 200
+- Description: Returns the user's profile information.
+
+### Example Response
+
+```json
+{
+  "_id": "609e1257f28b3c0015d3e8c2",
+  "fullname": {
+    "firstname": "Jane",
+    "lastname": "Doe"
+  },
+  "email": "jane.doe@example.com",
+ 
+}
+```
+
+## Error Responses
+
+- 401 Unauthorized: Missing or invalid authentication token.
+- 500 Internal Server Error: An unexpected error occurred on the server.
+
+---
+
+# /users/logout Endpoint
+
+## Description
+
+This endpoint logs out the authenticated user by clearing the authentication token and blacklisting it to prevent further use.
+
+## HTTP Method & URL
+
+GET /users/logout
+
+## Authentication
+
+- Required: Yes (JWT token via cookie or Authorization header)
+
+## Successful Response
+
+- Status Code: 200
+- Description: User successfully logged out.
+
+### Example Response
+
+```json
+{
+  "message": "Logged out"
+}
+```
+
+## Error Responses
+
+- 401 Unauthorized: Missing or invalid authentication token.
+- 500 Internal Server Error: An unexpected error occurred on the server.
+
 
 
 
